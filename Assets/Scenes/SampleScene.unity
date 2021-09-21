@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 1226303354}
   - component: {fileID: 1226303355}
   - component: {fileID: 1226303356}
+  - component: {fileID: 1226303357}
   m_Layer: 0
   m_Name: SpawnRandom
   m_TagString: Untagged
@@ -417,6 +418,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1605248276257790635, guid: 126115ace155e48869d57c4aef9c57ee, type: 3}
+  amount: 20
+  min: {x: -10, y: -10}
+  max: {x: 10, y: 10}
+--- !u!114 &1226303357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226303353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a479d91ad92ab4f2a97830d33c83097b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3635707017736664926, guid: 0b7e04cb79c7f4824bd330c83d60ed6b, type: 3}
   amount: 20
   min: {x: -10, y: -10}
   max: {x: 10, y: 10}

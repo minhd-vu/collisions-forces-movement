@@ -31,15 +31,15 @@ public class AgentController : MonoBehaviour
         {
             if (agent != this)
             {
-                float distance = Vector2.Distance(agent.transform.position, transform.position);
+                float distance = Mathf.Abs((agent.transform.position - transform.position).sqrMagnitude);
                 Vector2 direction = ((Vector2)(agent.transform.position - transform.position)).normalized;
 
-                if (distance >= outerRadius)
+                if (distance >= outerRadius * outerRadius)
                 {
                     force += direction * outerRadius / distance;
                     // rb.AddForce(direction * moveSpeed * outerRadius / distance);
                 }
-                else if (distance <= innerRadius)
+                else if (distance <= innerRadius * innerRadius)
                 {
                     force -= direction;
                     rb.AddForce(direction * -moveSpeed * 10);
@@ -50,10 +50,10 @@ public class AgentController : MonoBehaviour
         rb.AddForce(force.normalized * moveSpeed);
 
         GameObject player = GameObject.FindWithTag("Player");
-        float playerDistance = Vector2.Distance(player.transform.position, transform.position);
+        float playerDistance = Mathf.Abs((player.transform.position - transform.position).sqrMagnitude);
 
         float alpha = 1f;
-        if (playerDistance <= innerRadius)
+        if (playerDistance <= innerRadius * innerRadius)
         {
             alpha = 0.5f;
         }
